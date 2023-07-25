@@ -1,0 +1,19 @@
+
+[index] k-mer length: 15
+[index] number of targets: 12,696
+[index] number of k-mers: 12,695
+[index] number of equivalence classes: 12,697
+[quant] will process sample 1: /oak/stanford/groups/satpathy/users/jgutierrez/FT_project/FT_CITE_July2023/fastq_organize/POSc_S5_L001_R1_001.fastq.gz
+                               /oak/stanford/groups/satpathy/users/jgutierrez/FT_project/FT_CITE_July2023/fastq_organize/POSc_S5_L001_R2_001.fastq.gz
+[quant] finding pseudoalignments for the reads ... done
+[quant] processed 38,389,709 reads, 11,503,631 reads pseudoaligned
+Found 737280 barcodes in the on-list
+Processed 11503631 BUS records
+In on-list = 83995
+Corrected    = 332161
+Uncorrected  = 11087475
+ all fits in buffer
+Read in 416156 BUS records
+reading time 0s
+sorting time 0.03s
+writing time 0s

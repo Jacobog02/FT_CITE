@@ -1,0 +1,82 @@
+---
+title: "BLANK"
+author: "Jacob Gutierrez"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    code_folding: hide
+    df_print: paged
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
+    theme: yeti
+subtitle: "BLANK"
+---
+
+```{r knitr setup chunk, echo = F}
+## Knitr setupchunk
+knitr::opts_chunk$set(fig.width=12, fig.height=8, echo=TRUE, warning=FALSE, message=FALSE, rows.print=20, eval = TRUE)
+```
+
+
+# Overview {.tabset .tabset-fade .tabset-pills}
+
+This script is expected to run on {BLANK} See sessionInfo for more info.
+
+
+## Purpose   
+
+
+> **Assess BLANK** 
+
+## Motivation
+
+## Research Questions
+
+
+# Analysis 
+
+### Libraries
+
+
+```{r libraries}
+require(data.table)
+require(dplyr)
+require(tidyr)
+require(ggpubr)
+```
+
+
+
+
+## GEX summaries
+
+```{r}
+csv_df <- list.files("../data/summaries/",pattern = "*.csv",full.names = T) %>% lapply(function(x) {
+  df <- fread(x)
+  df %>% mutate( sample = x %>% basename() %>% gsub("_metrics_summary.csv","",.))
+}) %>% Reduce('rbind',.) %>% select(sample, everything())
+```
+
+
+
+```{r}
+use_cols <- csv_df %>% select(-sample) %>% colnames()
+csv_df %>% pivot_longer(cols = use_cols,  values_to = "Value") %>% ggtexttable()
+```
+
+
+
+
+
+
+# SessionInfo
+<details>
+  <summary>Click for SessionInfo</summary>
+```{r R info}
+sessionInfo()
+```
+</details> 
+
